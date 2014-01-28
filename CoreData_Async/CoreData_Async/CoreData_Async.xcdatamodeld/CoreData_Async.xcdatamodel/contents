@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Book" representedClassName="Book" syncable="YES">
+        <attribute name="domain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bookshelf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bookshelf" inverseName="books" inverseEntity="Bookshelf" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="book" inverseEntity="Page" syncable="YES"/>
+    </entity>
+    <entity name="Bookshelf" representedClassName="Bookshelf" syncable="YES">
+        <attribute name="domain" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="bookshelf" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Page" representedClassName="Page" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="pages" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bookshelf" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Book" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Page" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
