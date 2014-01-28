@@ -8,6 +8,8 @@
 
 #import "LibraryViewController.h"
 #import "Book.h"
+#import "Bookshelf.h"
+#import "Page.h"
 #import "BookCell.h"
 
 @interface LibraryViewController ()
@@ -47,7 +49,7 @@ static NSNumber* isRunning;
     [self configureFetchedResultsController];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[BookCell class] forCellReuseIdentifier:@"BookCell"];
+    //[self.tableView registerClass:[BookCell class] forCellReuseIdentifier:@"BookCell"];
 }
 
 - (void) configureFetchedResultsController {
@@ -64,16 +66,40 @@ static NSNumber* isRunning;
         isRunning = [NSNumber numberWithBool:![isRunning boolValue]];
     }
     [self performSelectorInBackground:@selector(createBooks) withObject:Nil];
+    [self performSelectorInBackground:@selector(createPages) withObject:Nil];
+}
+
+- (void) createBookShelves
+{
+    while ([isRunning boolValue]) {
+        usleep(1000000); // 1 per sec
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Bookshelf* bs = [Book createInContext:localContext];
+            [bs configure];
+        }];
+    }
 }
 
 - (void) createBooks
 {
     while ([isRunning boolValue]) {
-        sleep(1);
+        usleep(1000000); // 1 per sec
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             Book* b = [Book createInContext:localContext];
-            b.title = @"toto";
             [b configure];
+        }];
+    }
+}
+
+- (void) createPages
+{
+    // Wait for some books to be created first
+    sleep(2);
+    while ([isRunning boolValue]) {
+        usleep(10000); // 100 per sec
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Page* p = [Page createInContext:localContext];
+            [p configure];
         }];
     }
 }

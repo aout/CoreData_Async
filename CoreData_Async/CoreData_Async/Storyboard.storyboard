@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Library View Controller - MyBooks-->
+        <!--Library View Controller - Start creating objects ->-->
         <scene sceneID="UkH-46-IZP">
             <objects>
                 <tableViewController storyboardIdentifier="MyBooks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Krr-xH-QL2" customClass="LibraryViewController" sceneMemberID="viewController">
@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ab3-de-heE" style="IBUITableViewCellStyleDefault" id="Qq3-oz-5td">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" textLabel="ab3-de-heE" detailTextLabel="q0X-xI-Uun" style="IBUITableViewCellStyleSubtitle" id="Qq3-oz-5td" customClass="BookCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qq3-oz-5td" id="zLU-yO-EEA">
@@ -21,9 +21,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ab3-de-heE">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q0X-xI-Uun">
+                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -36,7 +43,7 @@
                             <outlet property="delegate" destination="Krr-xH-QL2" id="ngT-j3-gID"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MyBooks" id="B4P-km-nap">
+                    <navigationItem key="navigationItem" title="Start creating objects ->" id="B4P-km-nap">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fnU-46-6ik">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="8xL-ES-hjh">
                                 <rect key="frame" x="255" y="6" width="51" height="31"/>

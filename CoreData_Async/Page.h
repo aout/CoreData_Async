@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSManagedObject *book;
 
+- (void) configure;
+
 @end

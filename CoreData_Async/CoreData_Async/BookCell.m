@@ -12,7 +12,8 @@
 
 @interface BookCell ()
 
-@property (nonatomic, strong) THObserver* observer;
+@property (nonatomic, strong) THObserver* titleObserver;
+@property (nonatomic, strong) THObserver* pagesObserver;
 @property (nonatomic, strong) Book* book;
 
 @end
@@ -37,18 +38,24 @@
 
 - (void) dealloc
 {
-    [self.observer stopObserving];
+    [self.titleObserver stopObserving];
+    [self.pagesObserver stopObserving];
 }
 
 - (void) configureWithBook:(Book*)aBook
 {
     if (self.book) {
-        [self.observer stopObserving];
+        [self.titleObserver stopObserving];
     }
     self.book = aBook;
     [self.textLabel setText:self.book.title];
-    self.observer = [THObserver observerForObject:self.book keyPath:@"title" block:^{
+    [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld", [self.book.pages count]]];
+    
+    self.titleObserver = [THObserver observerForObject:self.book keyPath:@"title" block:^{
         [self.textLabel setText:self.book.title];
+    }];
+    self.pagesObserver = [THObserver observerForObject:self.book keyPath:@"title" block:^{
+        [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld", [self.book.pages count]]];
     }];
 }
 

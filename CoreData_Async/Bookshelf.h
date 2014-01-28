@@ -15,6 +15,9 @@
 
 @property (nonatomic, retain) NSString * domain;
 @property (nonatomic, retain) NSSet *books;
+
+- (void) configure;
+
 @end
 
 @interface Bookshelf (CoreDataGeneratedAccessors)
