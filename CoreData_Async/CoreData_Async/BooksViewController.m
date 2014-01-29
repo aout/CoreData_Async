@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Guillaume CASTELLANA. All rights reserved.
 //
 
-#import "LibraryViewController.h"
+#import "BooksViewController.h"
 #import "Book.h"
 #import "Bookshelf.h"
 #import "Page.h"
 #import "BookCell.h"
 
-@interface LibraryViewController ()
+@interface BooksViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
 
 @end
 
-@implementation LibraryViewController
+@implementation BooksViewController
 
 static NSNumber* isRunning;
 
@@ -47,9 +47,14 @@ static NSNumber* isRunning;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self configureFetchedResultsController];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
     //[self.tableView registerClass:[BookCell class] forCellReuseIdentifier:@"BookCell"];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    @synchronized(isRunning) {
+        [self.theSwitch setOn:[isRunning boolValue] animated:animated];
+    }
 }
 
 - (void) configureFetchedResultsController {
@@ -65,6 +70,7 @@ static NSNumber* isRunning;
     @synchronized(isRunning) {
         isRunning = [NSNumber numberWithBool:![isRunning boolValue]];
     }
+    [self performSelectorInBackground:@selector(createBookShelves) withObject:Nil];
     [self performSelectorInBackground:@selector(createBooks) withObject:Nil];
     [self performSelectorInBackground:@selector(createPages) withObject:Nil];
 }
@@ -83,7 +89,7 @@ static NSNumber* isRunning;
 - (void) createBooks
 {
     while ([isRunning boolValue]) {
-        usleep(1000000); // 1 per sec
+        usleep(100000); // 10 per sec
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             Book* b = [Book createInContext:localContext];
             [b configure];

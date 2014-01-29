@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1804505D1898745F00AE43D1 /* BookshelvesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804505C1898745F00AE43D1 /* BookshelvesViewController.m */; };
+		180450601898789A00AE43D1 /* BookshelfCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804505F1898789A00AE43D1 /* BookshelfCell.m */; };
 		1835DC7F18983416007DF304 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1835DC7E18983416007DF304 /* Storyboard.storyboard */; };
 		1847C6C118983FB100C357E9 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847C6C018983FB100C357E9 /* BookCell.m */; };
 		1847C6C81898408100C357E9 /* THBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847C6C41898408100C357E9 /* THBinder.m */; };
@@ -26,7 +28,7 @@
 		188F98FE18982D290007521F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F98E218982D290007521F /* CoreData.framework */; };
 		188F990618982D290007521F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188F990418982D290007521F /* InfoPlist.strings */; };
 		188F990818982D290007521F /* CoreData_AsyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F990718982D290007521F /* CoreData_AsyncTests.m */; };
-		188F991318982EC30007521F /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F991218982EC30007521F /* LibraryViewController.m */; };
+		188F991318982EC30007521F /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F991218982EC30007521F /* BooksViewController.m */; };
 		188F991618982EDC0007521F /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F991518982EDC0007521F /* Page.m */; };
 		188F991918982EDC0007521F /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F991818982EDC0007521F /* Book.m */; };
 		188F991C18982EDC0007521F /* Bookshelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F991B18982EDC0007521F /* Bookshelf.m */; };
@@ -44,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1804505B1898745F00AE43D1 /* BookshelvesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelvesViewController.h; sourceTree = "<group>"; };
+		1804505C1898745F00AE43D1 /* BookshelvesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelvesViewController.m; sourceTree = "<group>"; };
+		1804505E1898789A00AE43D1 /* BookshelfCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfCell.h; sourceTree = "<group>"; };
+		1804505F1898789A00AE43D1 /* BookshelfCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfCell.m; sourceTree = "<group>"; };
 		1835DC7E18983416007DF304 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1847C6BF18983FB100C357E9 /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		1847C6C018983FB100C357E9 /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
@@ -70,8 +76,8 @@
 		188F990318982D290007521F /* CoreData_AsyncTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreData_AsyncTests-Info.plist"; sourceTree = "<group>"; };
 		188F990518982D290007521F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		188F990718982D290007521F /* CoreData_AsyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreData_AsyncTests.m; sourceTree = "<group>"; };
-		188F991118982EC30007521F /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
-		188F991218982EC30007521F /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		188F991118982EC30007521F /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
+		188F991218982EC30007521F /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		188F991418982EDC0007521F /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Page.h; path = ../Page.h; sourceTree = "<group>"; };
 		188F991518982EDC0007521F /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Page.m; path = ../Page.m; sourceTree = "<group>"; };
 		188F991718982EDC0007521F /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = ../Book.h; sourceTree = "<group>"; };
@@ -164,8 +170,12 @@
 				188F991818982EDC0007521F /* Book.m */,
 				188F991418982EDC0007521F /* Page.h */,
 				188F991518982EDC0007521F /* Page.m */,
-				188F991118982EC30007521F /* LibraryViewController.h */,
-				188F991218982EC30007521F /* LibraryViewController.m */,
+				188F991118982EC30007521F /* BooksViewController.h */,
+				188F991218982EC30007521F /* BooksViewController.m */,
+				1804505B1898745F00AE43D1 /* BookshelvesViewController.h */,
+				1804505C1898745F00AE43D1 /* BookshelvesViewController.m */,
+				1804505E1898789A00AE43D1 /* BookshelfCell.h */,
+				1804505F1898789A00AE43D1 /* BookshelfCell.m */,
 				1847C6BF18983FB100C357E9 /* BookCell.h */,
 				1847C6C018983FB100C357E9 /* BookCell.m */,
 				188F98ED18982D290007521F /* AppDelegate.h */,
@@ -341,11 +351,13 @@
 				1847C6C118983FB100C357E9 /* BookCell.m in Sources */,
 				188F991C18982EDC0007521F /* Bookshelf.m in Sources */,
 				188F991618982EDC0007521F /* Page.m in Sources */,
+				180450601898789A00AE43D1 /* BookshelfCell.m in Sources */,
 				188F98F218982D290007521F /* CoreData_Async.xcdatamodeld in Sources */,
+				1804505D1898745F00AE43D1 /* BookshelvesViewController.m in Sources */,
 				188F98EF18982D290007521F /* AppDelegate.m in Sources */,
 				1847C6C91898408100C357E9 /* THObserver.m in Sources */,
 				1847C6C81898408100C357E9 /* THBinder.m in Sources */,
-				188F991318982EC30007521F /* LibraryViewController.m in Sources */,
+				188F991318982EC30007521F /* BooksViewController.m in Sources */,
 				188F991918982EDC0007521F /* Book.m in Sources */,
 				188F98EB18982D290007521F /* main.m in Sources */,
 			);

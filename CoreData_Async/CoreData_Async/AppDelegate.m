@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "LibraryViewController.h"
+#import "BooksViewController.h"
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) LibraryViewController* lvc;
+@property (strong, nonatomic) BooksViewController* lvc;
 
 @end
 

@@ -19,7 +19,6 @@
 
 - (void) configure
 {
-    usleep(50000); // 0.05s
     int len = 100;
     NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];

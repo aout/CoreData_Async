@@ -46,6 +46,7 @@
 {
     if (self.book) {
         [self.titleObserver stopObserving];
+        [self.pagesObserver stopObserving];
     }
     self.book = aBook;
     [self.textLabel setText:self.book.title];

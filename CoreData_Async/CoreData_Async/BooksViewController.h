@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LibraryViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface BooksViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, retain) IBOutlet UISwitch* theSwitch;
 
 @end
