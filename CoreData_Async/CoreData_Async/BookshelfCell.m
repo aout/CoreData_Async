@@ -49,13 +49,13 @@
     }
     self.bookshelf = aBookshelf;
     [self.textLabel setText:self.bookshelf.domain];
-    [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld books", [self.bookshelf.books count]]];
+    [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld books", (unsigned long)[self.bookshelf.books count]]];
     
     self.domainObserver = [THObserver observerForObject:self.bookshelf keyPath:@"domain" block:^{
         [self.textLabel setText:self.bookshelf.domain];
     }];
     self.booksObserver = [THObserver observerForObject:self.bookshelf keyPath:@"books" block:^{
-        [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld books", [self.bookshelf.books count]]];
+        [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld books", (unsigned long)[self.bookshelf.books count]]];
     }];
 }
 

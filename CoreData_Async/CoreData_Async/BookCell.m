@@ -50,13 +50,13 @@
     }
     self.book = aBook;
     [self.textLabel setText:self.book.title];
-    [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld pages", [self.book.pages count]]];
+    [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld pages", (unsigned long)[self.book.pages count]]];
     
     self.titleObserver = [THObserver observerForObject:self.book keyPath:@"title" block:^{
         [self.textLabel setText:self.book.title];
     }];
     self.pagesObserver = [THObserver observerForObject:self.book keyPath:@"title" block:^{
-        [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld pages", [self.book.pages count]]];
+        [self.detailTextLabel setText:[NSString stringWithFormat:@"%ld pages", (unsigned long)[self.book.pages count]]];
     }];
 }
 
